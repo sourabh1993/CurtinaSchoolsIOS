@@ -39,16 +39,28 @@ The simulator can't receive push notifications and has no camera. Test those on 
 
 ## 3. Push notifications (Firebase)
 
-An iOS app can only belong to **one** Firebase project. Today your schools are split across three:
-`push-notification-bcd33`, `magnus-8c2d1` and `jet66-808a0`.
+Each school uses the **same Firebase project as its Android app**, so the server needs no changes.
+The app connects to that project when the user picks the school:
 
-1. In the Firebase project you choose, add an iOS app with bundle id `com.magnus.curtinaschools`.
-2. Download `GoogleService-Info.plist` and put it in the `CurtinaSchools/` folder.
-3. Upload an APNs Auth Key (.p8) under Project settings → Cloud Messaging. This needs the Apple Developer account.
-4. **Server:** when the server sends a notification to an iPhone token, it must use the credentials of
-   *that* Firebase project, whichever school the user belongs to.
+| Firebase project          | Schools                                                         |
+|---------------------------|-----------------------------------------------------------------|
+| `push-notification-bcd33` | GDGPSK, HPS, MASD, MGPS, MKK, SDVMCITY, SOE, SPSKSP, SSPS, STMR, SWWS, DSPSKC |
+| `magnus-8c2d1`            | GGS, GPSMKG, RIS, DSPSPN                                        |
 
-Without the plist the app runs normally. It just doesn't send `&fcm=`.
+Setup, done once per project:
+1. Firebase console → Project settings → **Add app → iOS**. Bundle id `com.magnus.curtinaschools`.
+2. Download that project's `GoogleService-Info.plist`.
+3. Project settings → **Cloud Messaging → Apple app configuration** → upload the APNs Auth Key (.p8).
+   You can use the same key for both projects.
+4. Copy `PROJECT_ID`, `GCM_SENDER_ID`, `GOOGLE_APP_ID` and `API_KEY` from the plist into the `firebase`
+   field of each school that uses that project in `schools.json`:
+
+```json
+"firebase": { "projectId": "...", "gcmSenderId": "...", "googleAppId": "1:...:ios:...", "apiKey": "..." }
+```
+
+A school with no `firebase` entry works normally, just without notifications. iPhones only show
+notifications that include a `notification` title/body. Data-only messages are not displayed.
 
 ## 4. Real iPhone / App Store (needs a Mac + Apple Developer account, $99/yr)
 

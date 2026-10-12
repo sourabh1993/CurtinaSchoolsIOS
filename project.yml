@@ -42,6 +42,7 @@ targets:
           - UIInterfaceOrientationPortrait
         UIBackgroundModes:
           - remote-notification
+        FirebaseAppDelegateProxyEnabled: false
         NSCameraUsageDescription: The school portal uses the camera to upload photos and documents.
         NSMicrophoneUsageDescription: The school portal uses the microphone for audio and video features.
         NSPhotoLibraryUsageDescription: The school portal lets you upload photos from your library.

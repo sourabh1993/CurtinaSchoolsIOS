@@ -56,7 +56,10 @@ struct PortalView: View {
                 }
             }
         }
-        .task { await model.start(school: school) }
+        .task {
+            await store.loadSchools()
+            await model.start(school: store.selected ?? school)
+        }
         .alert("Change School?", isPresented: $confirmChange) {
             Button("Change", role: .destructive) {
                 Task {
@@ -113,7 +116,7 @@ final class PortalModel: NSObject, ObservableObject {
 
     func start(school: School) async {
         guard startURL == nil, var components = URLComponents(string: school.loginUrl) else { return }
-        if let token = await PushToken.fetch() {
+        if let token = await PushToken.fetch(for: school) {
             components.queryItems = (components.queryItems ?? []) + [URLQueryItem(name: "fcm", value: token)]
         }
         guard let url = components.url else { return }

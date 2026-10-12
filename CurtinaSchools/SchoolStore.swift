@@ -5,8 +5,17 @@ struct School: Codable, Identifiable, Equatable {
     let name: String
     let loginUrl: String
     let logoUrl: String?
+    /// iOS app settings from the school's Firebase project (GoogleService-Info.plist). nil = no push.
+    let firebase: FirebaseConfig?
 
     var id: String { appId }
+}
+
+struct FirebaseConfig: Codable, Equatable {
+    let projectId: String
+    let gcmSenderId: String
+    let googleAppId: String
+    let apiKey: String
 }
 
 @MainActor
@@ -35,6 +44,10 @@ final class SchoolStore: ObservableObject {
             let (data, _) = try await URLSession.shared.data(for: request)
             schools = try JSONDecoder().decode([School].self, from: data)
                 .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+            // Keep the saved school in step with the server (e.g. Firebase settings added later).
+            if let current = selected, let fresh = schools.first(where: { $0.appId == current.appId }), fresh != current {
+                select(fresh)
+            }
         } catch {
             errorMessage = "Could not load the school list. Check your internet connection and try again."
         }
