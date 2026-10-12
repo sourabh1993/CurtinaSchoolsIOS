@@ -1,0 +1,48 @@
+# XcodeGen spec. On a Mac (or in CI):  brew install xcodegen && xcodegen generate
+name: CurtinaSchools
+options:
+  bundleIdPrefix: com.magnus
+  deploymentTarget:
+    iOS: "15.0"
+
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: 11.0.0
+
+targets:
+  CurtinaSchools:
+    type: application
+    platform: iOS
+    scheme: {}
+    sources:
+      - CurtinaSchools
+    entitlements:
+      path: CurtinaSchools/CurtinaSchools.entitlements
+      properties:
+        aps-environment: development
+    dependencies:
+      - package: Firebase
+        product: FirebaseMessaging
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.magnus.curtinaschools
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+    info:
+      path: CurtinaSchools/Info.plist
+      properties:
+        CFBundleDisplayName: Curtina Schools
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIBackgroundModes:
+          - remote-notification
+        NSCameraUsageDescription: The school portal uses the camera to upload photos and documents.
+        NSMicrophoneUsageDescription: The school portal uses the microphone for audio and video features.
+        NSPhotoLibraryUsageDescription: The school portal lets you upload photos from your library.
+        NSLocationWhenInUseUsageDescription: The school portal uses your location for attendance and transport features.

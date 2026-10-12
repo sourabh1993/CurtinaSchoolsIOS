@@ -1,0 +1,38 @@
+# Builds an unsigned iOS Simulator app (no Mac or Apple account needed).
+# Download the "CurtinaSchools-simulator" artifact and upload the zip to https://appetize.io to try it in a browser.
+name: iOS test build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build for iOS Simulator
+        run: |
+          xcodebuild -project CurtinaSchools.xcodeproj -scheme CurtinaSchools \
+            -sdk iphonesimulator -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build \
+            ONLY_ACTIVE_ARCH=NO CODE_SIGNING_ALLOWED=NO build
+
+      - name: Zip app
+        run: |
+          cd build/Build/Products/Debug-iphonesimulator
+          zip -r "$GITHUB_WORKSPACE/CurtinaSchools-simulator.zip" CurtinaSchools.app
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CurtinaSchools-simulator
+          path: CurtinaSchools-simulator.zip

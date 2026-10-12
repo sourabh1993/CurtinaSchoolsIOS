@@ -1,0 +1,18 @@
+[
+  { "appId": "GDGPSK",   "name": "G. D. Goenka Public School",        "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=GDGPSK&newver=JET",           "logoUrl": "https://curtina.in/GDGPSK/assets/images/printlogo.png?ver=6" },
+  { "appId": "GGS",      "name": "G.G.S. Public School",              "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=GGS&newver=JET",              "logoUrl": "https://curtina.in/GGS/assets/images/printlogo.png?ver=4" },
+  { "appId": "GPSMKG",   "name": "Global Public School",              "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=GPSMKG&newver=JET",           "logoUrl": "https://curtina.in/GPSMKG/assets/images/printlogo.png?ver=6" },
+  { "appId": "HPS",      "name": "Himgiri Public School",             "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=HPS&newver=JET",              "logoUrl": "https://curtina.in/HPS/assets/images/printlogo.png?ver=6" },
+  { "appId": "MASD",     "name": "M.A.S.D. Public School",            "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=MASD&newver=JET",             "logoUrl": null },
+  { "appId": "MGPS",     "name": "Mother's Glory Public School",      "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=MGPS&newver=JET",             "logoUrl": "https://curtina.in/MGPS/assets/images/printlogo.png?ver=4" },
+  { "appId": "MKK",      "name": "Dr. M.K.K. Arya Model School",      "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=MKK&newver=JET",              "logoUrl": "https://curtina.in/MKK/assets/images/printlogo.png?ver=4" },
+  { "appId": "RIS",      "name": "Rainbow International School",      "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=RIS&newver=JET",              "logoUrl": "https://curtina.in/RIS/assets/images/printlogo.png?ver=6" },
+  { "appId": "SDVMCITY", "name": "S.D. Vidya Mandir City",            "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=SDVMCITY&newver=JET",         "logoUrl": "https://curtina.in/SDVMCITY/assets/images/printlogo.png?ver=4" },
+  { "appId": "SOE",      "name": "School of Excellence",              "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=SOE&newver=JET",              "logoUrl": "https://curtina.in/SOE/assets/images/printlogo.png?ver=4" },
+  { "appId": "SPSKSP",   "name": "Sai Public School",                 "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=SPSKSP&newver=JET",           "logoUrl": "https://curtina.in/SPSKSP/assets/images/printlogo.png?ver=4" },
+  { "appId": "SSPS",     "name": "Shri Sai Public School",            "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=SSPS&newver=JET",             "logoUrl": "https://curtina.in/SSPS/assets/images/printlogo.png?ver=4" },
+  { "appId": "STMR",     "name": "St. Mary's School",                 "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=STMR&newver=JET",             "logoUrl": "https://curtina.in/STMR/assets/images/printlogo.png?ver=4" },
+  { "appId": "SWWS",     "name": "Infinia World School",              "loginUrl": "https://curtina.in/_mobile/loginm.aspx?AppId=SWWS&newver=JET",             "logoUrl": "https://curtina.in/SWWS/assets/images/printlogo.png?ver=4" },
+  { "appId": "DSPSKC",   "name": "Dyal Singh Public School, Karnal",  "loginUrl": "https://curtina.in/dspskc/_mobile/login.aspx?AppId=DSPSKC&newver=JET",     "logoUrl": "https://curtina.in/dspskc/DSPSKC/assets/images/printlogo.png?ver=5" },
+  { "appId": "DSPSPN",   "name": "Dyal Singh Public School, Panipat", "loginUrl": "https://curtina.in/dspspn/_mobile/loginm.aspx?AppId=DSPSPN&newver=JET",    "logoUrl": "https://curtina.in/dspskc/DSPSKC/assets/images/printlogo.png?ver=3" }
+]
