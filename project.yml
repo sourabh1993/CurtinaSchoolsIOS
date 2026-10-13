@@ -31,6 +31,7 @@ targets:
         CURRENT_PROJECT_VERSION: "1"
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.0"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     info:
       path: CurtinaSchools/Info.plist
       properties:
@@ -40,10 +41,9 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
-        UIBackgroundModes:
-          - remote-notification
         FirebaseAppDelegateProxyEnabled: false
-        NSCameraUsageDescription: The school portal uses the camera to upload photos and documents.
-        NSMicrophoneUsageDescription: The school portal uses the microphone for audio and video features.
-        NSPhotoLibraryUsageDescription: The school portal lets you upload photos from your library.
-        NSLocationWhenInUseUsageDescription: The school portal uses your location for attendance and transport features.
+        ITSAppUsesNonExemptEncryption: false
+        NSCameraUsageDescription: Take a photo to upload to your school portal, such as a profile picture, assignment or document.
+        NSMicrophoneUsageDescription: Record audio when a school portal page asks for it, such as a voice note or video call.
+        NSPhotoLibraryUsageDescription: Choose a photo from your library to upload to your school portal.
+        NSLocationWhenInUseUsageDescription: Share your location with your school portal when a page asks for it, such as marking attendance on campus.

@@ -37,6 +37,12 @@ struct SchoolPickerView: View {
                 }
             }
             .navigationTitle("Select Your School")
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Link("Privacy Policy", destination: SchoolStore.privacyURL)
+                        .font(.footnote)
+                }
+            }
         }
         .navigationViewStyle(.stack)
         .task {

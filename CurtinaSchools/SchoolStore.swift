@@ -22,6 +22,7 @@ struct FirebaseConfig: Codable, Equatable {
 final class SchoolStore: ObservableObject {
     /// Maintained on the server, so adding a school needs no app update.
     static let listURL = URL(string: "https://curtina.in/_mobile/schools.json")!
+    static let privacyURL = URL(string: "https://curtina.in/_mobile/privacy.html")!
     private static let selectedKey = "selectedSchool"
 
     @Published private(set) var schools: [School] = []

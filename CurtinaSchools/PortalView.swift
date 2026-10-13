@@ -23,6 +23,7 @@ struct PortalView: View {
                 Spacer()
                 Menu {
                     Button { model.retry() } label: { Label("Reload", systemImage: "arrow.clockwise") }
+                    Link(destination: SchoolStore.privacyURL) { Label("Privacy Policy", systemImage: "hand.raised") }
                     Button(role: .destructive) { confirmChange = true } label: {
                         Label("Change School", systemImage: "building.2")
                     }
